@@ -1,0 +1,13 @@
+int ledR = 13;
+int ledG = 5;
+int ledB = 7;
+int corDiferente = 255;
+void setup()
+{
+}
+
+void loop()
+{
+analogWrite(ledG, corDiferente);
+  delay(5);
+}
