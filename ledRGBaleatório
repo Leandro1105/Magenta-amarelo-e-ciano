@@ -1,0 +1,49 @@
+int ledR = 11;
+int ledG = 10;
+int ledB = 9;
+int ledN = 12;
+int botao = 4;
+
+void setup()
+{
+  pinMode(ledR, OUTPUT);
+  pinMode(ledG, OUTPUT);
+  pinMode(ledB, OUTPUT);
+  pinMode(ledN, OUTPUT);
+  pinMode(botao, INPUT_PULLUP);
+}
+
+void loop()
+{
+  randomSeed(analogRead(0));
+  if(digitalRead(botao) == LOW)
+  {
+    int ledR = random(0,256);//Não lê o ultimo parametro
+    int ledB = random(0,256);//por isso usei o 256
+    int ledG = random(0,256);
+    if(ledR == 255 && ledB == 0 && ledG == 0)
+    {
+    digitalWrite(ledN, 1);
+    delay (4000);
+    digitalWrite(ledN,0);
+    }
+    else if(ledB = 255 && ledR == 0 && ledG == 0)
+    {
+    digitalWrite(ledN, 1);
+    delay (4000);
+    digitalWrite(ledN,0);
+    }
+    else if(ledG == 255 && ledR == 0 && ledB == 0)
+    {
+    digitalWrite(ledN, 1);
+    delay (4000);
+    digitalWrite(ledN,0);
+    }
+    else
+    {
+    analogWrite(11, ledR);
+    analogWrite(9, ledB);
+    analogWrite(10, ledG);
+    }
+  }
+}
