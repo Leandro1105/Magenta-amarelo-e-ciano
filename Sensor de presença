@@ -1,0 +1,25 @@
+int ledR = 2;
+int pir = 7;
+int acionamento;
+ 
+void setup()
+{
+pinMode(ledR, OUTPUT);
+pinMode(pir, INPUT);
+Serial.begin(9600);
+}
+ 
+void loop()
+{
+acionamento = digitalRead(pir);
+if (acionamento == LOW)
+{
+digitalWrite(ledR, LOW);
+Serial.println("Sem presenca");
+}
+else
+{
+digitalWrite(ledR, HIGH);
+Serial.println("Presenca detectada !!!");
+}
+}
