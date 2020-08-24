@@ -16,7 +16,7 @@ void loop() {
   float temperatureC = (voltage - 0.5) * 100;
   
   Serial.print(temperatureC);
-  Serial.println(" Graus Celcius ");
+  Serial.println(" Graus Celsius ");
   if(temperatureC <5.0){ 
   digitalWrite(ledB,1);
   delay (1000);
