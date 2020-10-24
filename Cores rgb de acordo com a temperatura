@@ -1,0 +1,52 @@
+int ledR = 7;
+int ledG = 5;
+int ledB = 6;
+int pinoSensorLuz = A0;
+int sensorPin = A1;
+int valorLuz = 0;                      
+ 
+void setup()
+{
+     Serial.begin(9600);
+     pinMode(ledR,OUTPUT);        
+     pinMode(ledG,OUTPUT);        
+     pinMode(ledB,OUTPUT);        
+}
+ 
+void loop()
+{
+  int reading = analogRead(sensorPin);
+  float voltage = reading * 4.68;
+  voltage = voltage/1024.0;
+  float temperatureC = (voltage - 0.5) * 100;
+  Serial.print(temperatureC);
+  Serial.println(" Graus Celcius ");
+  
+  valorLuz = analogRead(pinoSensorLuz);
+  
+  if(valorLuz >= 500 && temperatureC <=10.0)
+  {                
+    digitalWrite(ledB,1);
+    delay(1000);
+    digitalWrite(ledB,0);
+  }
+  else if(valorLuz >= 500 && temperatureC >=40)
+  {                    
+    digitalWrite(ledR,1);
+    digitalWrite(ledG,1);
+    delay(1000);
+    digitalWrite(ledR,0);
+    digitalWrite(ledG,0);
+  }
+  else if(valorLuz < 500 && temperatureC <=10.0){
+   digitalWrite(ledG,1); 
+   delay(1000);
+   digitalWrite(ledG,0);
+  }
+  else if(valorLuz < 500 && temperatureC >=40){
+   digitalWrite(ledR,1); 
+   delay(1000);
+   digitalWrite(ledR,0);
+  }
+  delay(10);                   
+}
