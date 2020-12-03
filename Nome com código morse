@@ -1,0 +1,177 @@
+int led = 6;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+  pinMode(10, INPUT_PULLUP);
+}
+
+void loop() {
+  //150 ms são os pontos
+  //400 ms são os traços
+if (digitalRead(10) == 0) {
+  Serial.println(".-.. . .- -. -.. .-. ---   =   Leandro");
+  // letra l
+  for (int x=0; x<4; x++) 
+  {
+    if(x==0){
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+    		}
+    else if(x ==1)
+    		{
+  digitalWrite(led, HIGH);
+  delay(400);//400 ms são os traços
+  digitalWrite(led, LOW);
+  delay(100);
+    		}
+    else if(x==2)
+    		{
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+    		}
+    else if(x==3)
+    		{
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+    		}
+  }
+  delay(200);
+  
+  // letra e
+  for (int x=0; x<1; x++) 
+  {
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+  }
+  delay(200);
+  
+  //letra a
+    for (int x=0; x<2; x++) 
+  {
+      if(x==0)
+      {
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==1)
+      {
+  digitalWrite(led, HIGH);
+  delay(400);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+  }
+  delay(200);
+
+  //letra n
+    for (int x=0; x<2; x++) 
+  {
+      if(x==0)
+      {
+  digitalWrite(led, HIGH);
+  delay(400);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==1)
+      {
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+  }
+  delay(200);
+  
+   //letra d
+    for (int x=0; x<3; x++) 
+  {
+      if(x==0)
+      {
+  digitalWrite(led, HIGH);
+  delay(400);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==1)
+      {
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==2)
+      {
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+  }
+  delay(200);
+  
+      //letra r
+    for (int x=0; x<3; x++) 
+  {
+      if(x==0)
+      {
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==1)
+      {
+  digitalWrite(led, HIGH);
+  delay(400);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==2)
+      {
+  digitalWrite(led, HIGH);
+  delay(150);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+  }
+  delay(200);
+  
+      //letra o
+    for (int x=0; x<3; x++) 
+  {
+      if(x==0)
+      {
+  digitalWrite(led, HIGH);
+  delay(400);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==1)
+      {
+  digitalWrite(led, HIGH);
+  delay(400);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+      else if(x==2)
+      {
+  digitalWrite(led, HIGH);
+  delay(400);
+  digitalWrite(led, LOW);
+  delay(100);
+      }
+  }
+   }
+}
